@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>let me take you</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="search">
+        <input id="search-field" type="text" name="search-field" onkeypress="return search(event)"/>
+    </div>
+    <div class="container">
+        <div id="clock"></div>
+        <div class="weather-container">
+            <div class="row">
+                <div id="weather-description"class="inline"></div>
+                <div class="inline">-</div>
+                <div id="temp" class="inline"></div>
+            </div>
+        </div>
+        <div class="bookmark-container">
+            <div class="bookmark-set">
+                <div class="bookmark-title">Tools</div>
+                <div class="bookmark-inner-container">
+                    <a class="bookmark" href="https://inbox.google.com/" target="_blank">gmail</a>
+                    <a class="bookmark" href="https://github.com/" target="_blank">github</a>
+                    <a class="bookmark" href="https://drive.google.com/" target="_blank">g-drive</a>
+                    <a class="bookmark" href="https://www.tineye.com/" target="_blank">tineye</a>
+                    <a class="bookmark" href="https://mega.nz/" target="_blank">mega</a>
+                    <a class="bookmark" href="http://draw.io/" target="_blank">draw-io</a>
+                    <a class="bookmark" href="http://pomf.cat/" target="_blank">pomf-cat</a>
+                </div>
+            </div>
+            <div class="bookmark-set">
+                <div class="bookmark-title">Travel</div>
+                <div class="bookmark-inner-container">
+                    <a class="bookmark" href="https://maps.google.com" target="_blank">g-maps</a>
+                    <a class="bookmark" href="https://booking.com" target="_blank">booking-com</a>
+                    <a class="bookmark" href="www.couchsurfing.com/dashboard" target="_blank">couchsurfing</a>
+                    <a class="bookmark" href="https://www.airbnb.co.nz" target="_blank">airbnb</a>
+                    <a class="bookmark" href="https://www.helpx.net/" target="_blank">helpx</a>
+                </div>
+            </div>
+            <div class="bookmark-set">
+            <div class="bookmark-title">Boards</div>
+                <div class="bookmark-inner-container">
+                    <a class="bookmark" href="http://boards.4chan.org/g/catalog" target="_blank">technology</a>
+                    <a class="bookmark" href="http://boards.4chan.org/p/catalog" target="_blank">photography</a>
+                    <a class="bookmark" href="http://boards.4chan.org/wg/catalog" target="_blank">wallpapers</a>
+                    <a class="bookmark" href="http://boards.4chan.org/trv/catalog" target="_blank">travel</a>
+                    <a class="bookmark" href="http://boards.4chan.org/out/catalog" target="_blank">outdoors</a>
+                    <a class="bookmark" href="http://boards.4chan.org/int/catalog" target="_blank">international</a>
+                    <a class="bookmark" href="https://www.reddit.com/r/newzealand" target="_blank">/r/newzealand</a>
+                    <a class="bookmark" href="https://www.reddit.com/r/macsetups" target="_blank">/r/macsetups</a>
+                    <a class="bookmark" href="https://www.reddit.com/r/desktops" target="_blank">/r/desktops</a>
+                </div>
+            </div>
+            <div class="bookmark-set">
+                <div class="bookmark-title">Social</div>
+                <div class="bookmark-inner-container">
+                    <a class="bookmark" href="https://twitter.com" target="_blank">twitter</a>
+                    <a class="bookmark" href="https://facebook.com" target="_blank">facebook</a>
+                    <a class="bookmark" href="https://instagram.com" target="_blank">instagram</a>
+                    <a class="bookmark" href="https://pinterest.nz" target="_blank">pinterest</a>
+                    <a class="bookmark" href="https://youtube.com" target="_blank">youtube</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Search on enter key event
+        function search(e) {
+            if (e.keyCode == 13) {
+                var val = document.getElementById("search-field").value;
+                window.open("https://google.com/search?q=" + val);
+            }
+        }
+        // Get current time and format
+        function getTime() {
+            let date = new Date(),
+                min = date.getMinutes(),
+                sec = date.getSeconds(),
+                hour = date.getHours();
+
+            return "" + 
+                (hour < 10 ? ("0" + hour) : hour) + ":" + 
+                (min < 10 ? ("0" + min) : min) + ":" + 
+                (sec < 10 ? ("0" + sec) : sec);
+        }
+
+        window.onload = () => {
+            let xhr = new XMLHttpRequest();
+            // Request to open weather map
+            xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=Auckland,nz&units=metric&appid=e5b292ae2f9dae5f29e11499c2d82ece');
+            xhr.onload = () => {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        let json = JSON.parse(xhr.responseText);
+                        console.log(json);
+                        document.getElementById("temp").innerHTML = json.main.temp.toFixed(0) + " C";
+                        document.getElementById("weather-description").innerHTML = json.weather[0].description;
+                    } else {
+                        console.log('error msg: ' + xhr.status);
+                    }
+                }
+            }
+            xhr.send();
+            // Set up the clock
+            document.getElementById("clock").innerHTML = getTime();
+            // Set clock interval to tick clock
+            setInterval( () => {
+                document.getElementById("clock").innerHTML = getTime();
+            },100);
+        }
+
+        document.addEventListener("keydown", event => {
+            if (event.keyCode == 32) {          // Spacebar code to open search
+                document.getElementById('search').style.display = 'flex';
+                document.getElementById('search-field').focus();
+            } else if (event.keyCode == 27) {   // Esc to close search
+                document.getElementById('search-field').value = '';
+                document.getElementById('search-field').blur();
+                document.getElementById('search').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
