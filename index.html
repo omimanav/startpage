@@ -118,10 +118,10 @@
         }
 
         document.addEventListener("keydown", event => {
-            if (event.keyCode == 32) {          // Spacebar code to open search
+			if (![8, 9, 20, 32, 37, 38, 39, 40].includes(event.keyCode)) {
                 document.getElementById('search').style.display = 'flex';
-                document.getElementById('search-field').focus();
-            } else if (event.keyCode == 27) {   // Esc to close search
+                document.getElementById('search-field').focus();}
+			if (event.keyCode == 27) {
                 document.getElementById('search-field').value = '';
                 document.getElementById('search-field').blur();
                 document.getElementById('search').style.display = 'none';
