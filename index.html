@@ -78,7 +78,7 @@
         function search(e) {
             if (e.keyCode == 13) {
                 var val = document.getElementById("search-field").value;
-                window.open("https://google.com/search?q=" + val);
+                window.open("https://duckduckgo.com/?q=" + val);
             }
         }
         // Get current time and format
@@ -95,7 +95,7 @@
         }
 
         window.onload = () => {
-            let xhr = new XMLHttpRequest();
+            xhr = new XMLHttpRequest();
             // Request to open weather map
             xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=Auckland,nz&units=metric&appid=e5b292ae2f9dae5f29e11499c2d82ece');
             xhr.onload = () => {
