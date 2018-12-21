@@ -1,11 +1,9 @@
 body {
     background-color: black;
     margin: 0px;
-    background-image: url(mush.jpg);
+    background-image: url(bg-dark.jpg);
     background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+	background-repeat:repeat;
 }
 
 .container {
@@ -22,14 +20,16 @@ body {
     font-size: 3.5rem;
     font-weight: 600;
     font-family: "PT Mono", "SF Mono" ;
-    color: #D4A3AD;
+    color: #efefef;
     margin-bottom: .25em;
 }
 
 #search {
     width: 100%;
     height: 100vh;
-    background-color: rgb(14, 85, 119);
+    background-image: url(bg-dark.jpg);
+    background-position: center;
+	background-repeat:repeat;
     display: none;
     position: absolute;
     box-sizing: border-box;
@@ -42,8 +42,10 @@ body {
     width: 90%;
     padding: .75em 1em;
     box-sizing: border-box;
-    background-color: rgb(14, 85, 119);
-    border: solid 0px rgb(14, 85, 119);
+    background-image: url(bg-dark.jpg);
+    background-position: center;
+	background-repeat:repeat;
+    border: solid 0px #333;
     font-family: "PT Mono";
     font-size: 4rem;
     color: #f2f2f2;
@@ -55,11 +57,13 @@ body {
 
 .weather-container {
     width: 30%;
-    background-color: rgb(14, 85, 119);
+    background-image: url(bg-dark.jpg);
+    background-position: center;
+	background-repeat:repeat;
     padding: 1em;
     border-radius: 3px;
     font-family: "PT Mono";
-    color:rgb(208, 215, 63);
+    color:#efefef;
     text-align: center;
 }
 
@@ -94,7 +98,9 @@ body {
 
 .bookmark-set {
     padding: 1em;
-    background-color: rgb(14, 85, 119);
+    background-image: url(bg-dark.jpg);
+    background-position: center;
+	background-repeat:repeat;
     border-radius: 3px;
     font-family: "PT Mono";
     font-size: .85rem;
@@ -110,7 +116,7 @@ body {
 .bookmark-title {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #D4A3AD;
+    color: #efefef;
     margin: 0em 0em .35em 0em;
     text-align: center;
 }
@@ -119,13 +125,13 @@ body {
 }
 .bookmark {
     text-decoration: none;
-    color:rgb(208, 215, 63);
+    color:#efefef;
     display:block;
     margin: .5em 0em;
     text-align: center;
 }
 .bookmark:hover {
-    color: #D4A3AD;
+    color: #efefef;
 }
 
 ::-webkit-scrollbar {
