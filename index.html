@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
     <title>let me take you</title>
     <link rel="stylesheet" href="styles.css">
@@ -14,13 +13,6 @@
     </div>
     <div class="container">
         <div id="clock"></div>
-        <div class="weather-container">
-            <div class="row">
-                <div id="weather-description"class="inline"></div>
-                <div class="inline">-</div>
-                <div id="temp" class="inline"></div>
-            </div>
-        </div>
         <div class="bookmark-container">
             <div class="bookmark-set">
                 <div class="bookmark-title">Tools</div>
@@ -100,29 +92,13 @@
         }
 
         window.onload = () => {
-            xhr = new XMLHttpRequest();
-            // Request to open weather map
-            xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=Auckland,nz&units=metric&appid=e5b292ae2f9dae5f29e11499c2d82ece');
-            xhr.onload = () => {
-                if (xhr.readyState === 4) {
-                    if (xhr.status === 200) {
-                        let json = JSON.parse(xhr.responseText);
-                        console.log(json);
-                        document.getElementById("temp").innerHTML = json.main.temp.toFixed(0) + " C";
-                        document.getElementById("weather-description").innerHTML = json.weather[0].description;
-                    } else {
-                        console.log('error msg: ' + xhr.status);
-                    }
-                }
-            }
-            xhr.send();
-            // Set up the clock
-            document.getElementById("clock").innerHTML = getTime();
-            // Set clock interval to tick clock
-            setInterval( () => {
-                document.getElementById("clock").innerHTML = getTime();
-            },100);
-        }
+			// Set up the clock
+			document.getElementById("clock").innerHTML = getTime();
+			// Set clock interval to tick clock
+			setInterval( () => {
+				document.getElementById("clock").innerHTML = getTime();
+			},100);
+		}
 
         document.addEventListener("keydown", event => {
 			if (![8, 9, 20, 32, 37, 38, 39, 40].includes(event.keyCode)) {

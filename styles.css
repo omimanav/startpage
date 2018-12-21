@@ -75,7 +75,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 50%;
+    width: 90%;
     margin: 1em 0em;
 }
 
@@ -84,28 +84,29 @@ body {
         height: auto;
     }
     #clock {
-        margin-top: 1em;
+        margin-top: 0.5em;
     }
     .container > .bookmark-container {
         flex-direction: column;
-        width: 80%;
+        width: 90%;
     }
     .bookmark-container > .bookmark-set {
         width: auto;
-        margin: 1em 0em;
+        margin: 0.5em 0em;
     }
 }
 
 .bookmark-set {
     padding: 1em;
     background-image: url(bg-dark.jpg);
+/*	background-color:#444;*/
     background-position: center;
 	background-repeat:repeat;
     border-radius: 3px;
     font-family: "PT Mono";
     font-size: .85rem;
     width: 25%;
-    height: 15em;
+    height: 18em;
     margin: 0em .5em;
 }
 .bookmark-inner-container {
