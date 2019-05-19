@@ -3,114 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>let me take you</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="js.js" type="text/javascript"></script>
+    <script src="jq.js" type="text/javascript"></script>
 </head>
 <body>
-    <div id="search">
-        <input id="search-field" type="text" name="search-field" onkeypress="return search(event)"/>
-    </div>
-    <div class="container">
-        <div id="clock"></div>
-        <div class="bookmark-container">
-            <div class="bookmark-set">
-                <div class="bookmark-title">Tools</div>
-                <div class="bookmark-inner-container">
-                    <a class="bookmark" href="https://inbox.google.com/" target="_blank">gmail</a>
-                    <a class="bookmark" href="https://github.com/" target="_blank">github</a>
-                    <a class="bookmark" href="https://drive.google.com/" target="_blank">g-drive</a>
-                    <a class="bookmark" href="https://www.tineye.com/" target="_blank">tineye</a>
-                    <a class="bookmark" href="https://mega.nz/" target="_blank">mega</a>
-                    <a class="bookmark" href="http://draw.io/" target="_blank">draw-io</a>
-                    <a class="bookmark" href="http://pomf.cat/" target="_blank">pomf-cat</a>
-                </div>
-            </div>
-            <div class="bookmark-set">
-                <div class="bookmark-title">Travel</div>
-                <div class="bookmark-inner-container">
-                    <a class="bookmark" href="https://maps.google.com" target="_blank">g-maps</a>
-                    <a class="bookmark" href="https://booking.com" target="_blank">booking-com</a>
-                    <a class="bookmark" href="https://www.couchsurfing.com/dashboard" target="_blank">couchsurfing</a>
-                    <a class="bookmark" href="https://www.airbnb.co.nz" target="_blank">airbnb</a>
-                    <a class="bookmark" href="https://www.helpx.net/" target="_blank">helpx</a>
-                    <a class="bookmark" href="https://remoteok.io" target="_blank">remote-jobs</a>
-                    <a class="bookmark" href="https://weworkremotely.com" target="_blank">weworkremotely</a>
-                    <a class="bookmark" href="https://www.skipthedrive.com" target="_blank">skipthedrive</a>
-                </div>
-            </div>
-            <div class="bookmark-set">
-            <div class="bookmark-title">Boards</div>
-                <div class="bookmark-inner-container">
-                    <a class="bookmark" href="https://boards.4chan.org/g/catalog" target="_blank">technology</a>
-                    <a class="bookmark" href="https://boards.4chan.org/p/catalog" target="_blank">photography</a>
-                    <a class="bookmark" href="https://boards.4chan.org/wg/catalog" target="_blank">wallpapers</a>
-                    <a class="bookmark" href="https://boards.4chan.org/trv/catalog" target="_blank">travel</a>
-                    <a class="bookmark" href="https://boards.4chan.org/out/catalog" target="_blank">outdoors</a>
-                    <a class="bookmark" href="https://boards.4chan.org/int/catalog" target="_blank">international</a>
-                    <a class="bookmark" href="https://www.reddit.com/r/newzealand" target="_blank">/r/newzealand</a>
-                    <a class="bookmark" href="https://www.reddit.com/r/onebag/" target="_blank">/r/onebag</a>
-                    <a class="bookmark" href="https://www.reddit.com/r/travelpartners/" target="_blank">/r/travelpartners</a>
-					<a class="bookmark" href="https://www.reddit.com/r/edc" target="_blank">/r/EDC</a>
-                    <a class="bookmark" href="https://www.reddit.com/r/macsetups" target="_blank">/r/macsetups</a>
-                    <a class="bookmark" href="https://www.reddit.com/r/desktops" target="_blank">/r/desktops</a>
-                </div>
-            </div>
-            <div class="bookmark-set">
-                <div class="bookmark-title">Social</div>
-                <div class="bookmark-inner-container">
-                    <a class="bookmark" href="https://twitter.com" target="_blank">twitter</a>
-                    <a class="bookmark" href="https://facebook.com" target="_blank">facebook</a>
-                    <a class="bookmark" href="https://instagram.com" target="_blank">instagram</a>
-                    <a class="bookmark" href="https://pinterest.nz" target="_blank">pinterest</a>
-                    <a class="bookmark" href="https://youtube.com" target="_blank">youtube</a>
-                    <a class="bookmark" href="https://twitch.tv" target="_blank">twitch</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Search on enter key event
-        function search(e) {
-            if (e.keyCode == 13) {
-                var val = document.getElementById("search-field").value;
-                window.open("https://duckduckgo.com/?q=" + val);
-            }
-        }
-        // Get current time and format
-        function getTime() {
-            let date = new Date(),
-                min = date.getMinutes(),
-                sec = date.getSeconds(),
-                hour = date.getHours();
-
-            return "" + 
-                (hour < 10 ? ("0" + hour) : hour) + ":" + 
-                (min < 10 ? ("0" + min) : min) + ":" + 
-                (sec < 10 ? ("0" + sec) : sec);
-        }
-
-        window.onload = () => {
-			// Set up the clock
-			document.getElementById("clock").innerHTML = getTime();
-			// Set clock interval to tick clock
-			setInterval( () => {
-				document.getElementById("clock").innerHTML = getTime();
-			},100);
-		}
-
-        document.addEventListener("keydown", event => {
-			if (![8, 9, 20, 32, 37, 38, 39, 40].includes(event.keyCode)) {
-                document.getElementById('search').style.display = 'flex';
-                document.getElementById('search-field').focus();
-			}
-			if (event.keyCode == 27) {
-                document.getElementById('search-field').value = '';
-                document.getElementById('search-field').blur();
-                document.getElementById('search').style.display = 'none';
-            }
-        });
-    </script>
+    <!-- search bar -->
+    <input id="search" type="text" onkeypress="return search(event)"/>
+    
+    <!-- clock -->
+    <span id="clock"></span>
+    
+    <!-- bookmarks -->
+    <ul class="card" id="fourch"> <!--4ch-->
+        <li class="bookmark"><a class="link" href="https://4chan.org/catalog/p/">/P/</a></li>
+        <li class="bookmark"><a class="link" href="https://4chan.org/catalog/g/">/G/</a></li>
+        <li class="bookmark"><a class="link" href="https://4chan.org/catalog/r/">/R/</a></li>
+        <li class="bookmark"><a class="link" href="https://4chan.org/catalog/tv/">/TV/</a></li>
+        <li class="bookmark"><a class="link" href="https://4chan.org/catalog/mu/">/MU/</a></li>
+        <li class="bookmark"><a class="link" href="https://4chan.org/catalog/wg/">/WG/</a></li>
+        <li class="bookmark"><a class="link" href="https://4chan.org/catalog/adv/">/ADV/</a></li>
+        <li class="bookmark"><a class="link" href="https://4chan.org/catalog/gif/">/GIF/</a></li>
+        <li class="bookmark"><a class="link" href="https://4chan.org/catalog/trv/">/TRV/</a></li>
+    </ul>
+    <ul class="card" id="social"> <!--social-->
+        <li class="bookmark"><a class="link" href="https://facebook.com">Facebook</a></li>
+        <li class="bookmark"><a class="link" href="https://twitter.com">Twitter</a></li>
+        <li class="bookmark"><a class="link" href="https://instagram.com">Instagram</a></li>
+        <li class="bookmark"><a class="link" href="https://youtube.com">Youtube</a></li>
+        <li class="bookmark"><a class="link" href="https://pinterest.nz">Pinterest</a></li>
+        <li class="bookmark"><a class="link" href="https://reddit.com">Reddit</a></li>
+    </ul>
+    <ul class="card" id="tools"> <!--tools-->
+        <li class="bookmark"><a class="link" href="https://maps.google.com">G-maps</a></li>
+        <li class="bookmark"><a class="link" href="https://booking.com">Booking-com</a></li>
+        <li class="bookmark"><a class="link" href="https://www.couchsurfing.com/dashboard">Couchsurfing</a></li>
+        <li class="bookmark"><a class="link" href="https://www.airbnb.co.nz">Airbnb</a></li>
+        <li class="bookmark"><a class="link" href="https://www.helpx.net/">Helpx</a></li>
+        <li class="bookmark"><a class="link" href="https://mega.nz/">Mega</a></li>
+        <li class="bookmark"><a class="link" href="https://github.com/">Github</a></li>
+    </ul>
 </body>
 </html>
