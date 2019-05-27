@@ -31,7 +31,7 @@ function getTime() {
         todayMonth = date.getMonth(),
         todayYear = date.getFullYear();
     return "" + todayDate + "/" + 
-        todayMonth + "/" +
+        (todayMonth + 1) + "/" +
         todayYear + " " +
         (hour < 10 ? ("0" + hour) : hour) + ":" + 
         (min < 10 ? ("0" + min) : min) + ":" + 
