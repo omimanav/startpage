@@ -1,0 +1,120 @@
+@import url("http://omimanav.com/fonts/mmd/MMD-Regular.ttf");
+
+* {
+	font-family: "Major Mono Display", sans-serif, monospace;
+	transition-duration: 0.15s;
+}
+
+body {
+	background-image: url("bg.jpg");
+	background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.card {
+	list-style: none;
+	padding: 0;
+}
+
+.link {
+	text-decoration: none;
+	color: #25CCF7;
+	font-weight: 600;
+}
+
+@media (min-width:768px) {
+	.card {
+		position: absolute;
+		z-index: 2;
+		right: 200px;
+		width: 200px;
+		display:block;
+	}
+	
+	.bookmark {
+		padding: 5px 0 5px 0;
+		position: relative;
+		opacity: 0;
+		z-index: 3;
+		font-size: 0pt;
+		text-align: center;
+	}
+	
+	.card .bookmark:nth-of-type(2) {
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+	}
+	
+	.card .bookmark:last-of-type {
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+	}
+	
+	.link {
+		padding: 5px 5px 5px 5px;
+	}
+	
+	#reddit {
+		top: 50px;
+	}
+	
+	#social {
+		top: 350px;
+	}
+	
+	#tools {
+		top: 550px;
+	}
+	
+	.bmt {
+		color: rgb(200, 200, 200, 1);
+		font-weight: 600;
+		padding: 5px 0 5px 0;
+		background-color: rgb(189, 119, 57);
+		border-radius: 10px;
+		cursor: pointer;
+		text-align: center;
+		z-index: 2;
+		margin-bottom:3px;
+	}
+	
+	#time, #date {
+		color: rgb(189, 119, 57);
+		background-color: rgb(255, 255, 255, 0.95);
+		border-radius: 10px;
+		font-size: 42pt;
+		padding: 10px;
+		position: absolute;
+		z-index: 4;
+		top: 50px;
+		display: inline-block;
+	}
+	
+	#time {
+		left: 420px;
+	}
+	
+	#date {
+		left: 50px;
+	}
+	
+	#search {
+		position: absolute;
+		z-index: 5;
+		display: inline-block;
+		top: 200px;
+		padding: 0;
+		margin: 0;
+		background-color: rgb(255, 255, 255, 0.95);
+		font-size: 42pt;
+		color: transparent;
+		border: none;
+		border-radius: 10px;
+		left: 50px;
+		text-align: center;
+		padding: 10px;
+		text-shadow: 0px 0px 1px #25CCF7;
+	}
+}

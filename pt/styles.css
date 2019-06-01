@@ -1,12 +1,13 @@
-@import url("https://fonts.googleapis.com/css?family=Major+Mono+Display&display=swap&subset=latin-ext");
+@import url("http://omimanav.com/fonts/mmd/MMD-Regular.ttf");
 
 * {
     transition-duration: 1.2s;
     -webkit-transition-duration: 1.2s;
     -moz-transition-duration: 1.2s;
+    font-family: "Major Mono Display", sans-serif, monospace;
 }
 
-@media (min-width:720px) {
+@media (min-width:768px) {
     body {
         width: 100vw;
         height: 100vh;
@@ -20,7 +21,6 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
-        font-family: "Major Mono Display", sans-serif, monospace;
     }
 
     .card {
@@ -81,9 +81,8 @@
         font-size: 24pt;
         top: 0;
         left: 0;
-        width: 50%;
+        width: 50vw;
         text-align: right;
-        font-family: "Major Mono Display", sans-serif, monospace;
     }
     
     /* date and time */
@@ -94,8 +93,62 @@
         line-height: 80vh;
         font-size: 48pt;
         text-align: center;
-        width: 100%;
+        width: 100vw;
         color: #cdcdcd;
         text-shadow: 0 0 10px rgb(253, 112, 112);
     }
+}
+
+@media (max-width:768px) {
+	body {
+		background-image:url("bg.jpg");
+        background-position: bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+	}
+	
+	#clock {
+		display: none;
+	}
+	
+	#search {
+		display: inline-block;
+        position: absolute;
+        z-index: 4;
+        background-color: rgb(253, 112, 112, 0.2);
+        border: 0 none transparent;
+        outline: none;
+        color: #cdcdcd;
+        padding: 0;
+        margin: 0;
+        font-size: 24pt;
+        top: 0;
+		left: 0;
+        width: 100vw;
+        text-align: center;
+	}
+	
+	.card {
+		top: 35px;
+		position: relative;
+		list-style: none;
+		display: block;
+		z-index: 2;
+		background-color: rgb(253, 112, 112, 0.7);
+        box-shadow: 0 0 10px #FD7272;
+        padding: 0;
+        text-align: center;
+	}
+	
+	.bookmark {
+		padding: 10px;
+		text-align: center;
+	}
+	
+	.link {
+		text-decoration: none;
+		color: #cdcdcd;
+		font-size: 18pt;
+	}
 }
