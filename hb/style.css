@@ -104,11 +104,13 @@ body {
 		position: absolute;
 		z-index: 5;
 		display: inline-block;
+		width: 50vw;
+		min-width: 200px;
 		top: 200px;
 		padding: 0;
 		margin: 0;
 		background-color: rgb(255, 255, 255, 0.95);
-		font-size: 42pt;
+		font-size: 3em;
 		color: transparent;
 		border: none;
 		border-radius: 10px;
