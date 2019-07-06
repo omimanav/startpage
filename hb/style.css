@@ -1,7 +1,10 @@
-@import url("http://omimanav.com/fonts/mmd/MMD-Regular.ttf");
+@font-face {
+	src: url("http://omimanav.com/fonts/mmd/MMD-Regular.ttf");
+	font-family: "mmd";
+}
 
 * {
-	font-family: "Major Mono Display", sans-serif, monospace;
+	font-family: "mmd", sans-serif, monospace;
 	transition-duration: 0.15s;
 }
 
