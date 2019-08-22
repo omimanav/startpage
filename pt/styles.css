@@ -24,7 +24,7 @@
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-attachment: fixed;
-	}
+	} 
 
 	.card {
 		position: absolute;
@@ -68,7 +68,11 @@
 	}
 	
 	#tools {
-		margin-left: 20vw;
+		margin-left: 10vw;
+	}
+	
+	#work {
+		margin-left: 30vw;
 	}
 	
 	/* search field */
