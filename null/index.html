@@ -6,7 +6,6 @@
 	<title>&nbsp;</title>
 	<link rel="stylesheet" href="style.css">
 	<script>
-	
 	document.addEventListener("keydown", event => {
 		if (![8, 9, 20, 32, 37, 38, 39, 40].includes(event.keyCode)) {
 			document.getElementById('search').focus();
@@ -16,16 +15,59 @@
 		}
 	});
 	
+	var links = document.getElementsByClassName("link");
+	
 	function search(e) {
 		if (e.keyCode == 13) {
 			var val = document.getElementById("search").value;
-			window.open("https://duckduckgo.com/?q=" + val + "&kg=g&kh=1&kaf=-1");
+			for (var link of links) {
+				var href = link.getAttribute("href");
+				if (href.includes(val)) {
+					window.open(href);
+					document.getElementById('search').value = '';
+					return 0;
+				}
+			}
+			window.open("https://duckduckgo.com/?q=" + val);
+			document.getElementById('search').value = '';
+			return 1;
 		}
 	}
 	</script>
 </head>
 
 <body>
-	<input id="search" onkeypress="return search(event)" type="text" placeholder="you're here">
+	<input id="search" onkeypress="return search(event)" type="text" placeholder="">
+	
+	<ul class="card" id="fourch"> <!--4ch-->
+        <li class="bookmark"><a class="link" href="https://4chan.org/p/catalog">/P/</a></li>
+        <li class="bookmark"><a class="link" href="https://4chan.org/g/catalog">/G/</a></li>
+        <li class="bookmark"><a class="link" href="https://4chan.org/tv/catalog">/TV/</a></li>
+        <li class="bookmark"><a class="link" href="https://4chan.org/mu/catalog">/MU/</a></li>
+        <li class="bookmark"><a class="link" href="https://4chan.org/wg/catalog">/WG/</a></li>
+        <li class="bookmark"><a class="link" href="https://4chan.org/adv/catalog">/ADV/</a></li>
+        <li class="bookmark"><a class="link" href="https://4chan.org/trv/catalog">/TRV/</a></li>
+    </ul>
+    <ul class="card" id="social"> <!--social-->
+        <li class="bookmark"><a class="link" href="https://instagram.com">Instagram</a></li>
+        <li class="bookmark"><a class="link" href="https://invidio.us">Youtube</a></li>
+        <li class="bookmark"><a class="link" href="https://pinterest.nz">Pinterest</a></li>
+        <li class="bookmark"><a class="link" href="https://reddit.com">Reddit</a></li>
+    </ul>
+    <ul class="card" id="tools"> <!--tools-->
+        <li class="bookmark"><a class="link" href="https://maps.google.com">G-maps</a></li>
+        <li class="bookmark"><a class="link" href="https://booking.com">Booking-com</a></li>
+        <li class="bookmark"><a class="link" href="https://www.couchsurfing.com/dashboard">Couchsurfing</a></li>
+        <li class="bookmark"><a class="link" href="https://www.airbnb.co.nz">Airbnb</a></li>
+        <li class="bookmark"><a class="link" href="https://www.helpx.net/">Helpx</a></li>
+        <li class="bookmark"><a class="link" href="https://mega.nz/">Mega</a></li>
+        <li class="bookmark"><a class="link" href="https://github.com/">Github</a></li>
+    </ul>
+	
+	<ul class="card" id="work"> <!--work-->
+		<li class="bookmark"><a class="link" href="https://weworkremotely.com/">WWR</a></li>
+		<li class="bookmark"><a class="link" href="https://indeed.com/">indeed</a></li>
+		<li class="bookmark"><a class="link" href="https://linkedin.com">LinkedIn</a></li>
+	</ul>
 </body>
 </html>

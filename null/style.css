@@ -25,3 +25,7 @@ input {
 	color: #fff;
 	opacity: 1;
 }
+
+.card {
+	display: none;
+}
