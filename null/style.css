@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+body {
+	background-color: #111;
+}
+
+input {
+	background-color: #111;
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 5vw;
+	width: 100vw;
+	font-weight: 700;
+	border: none;
+	padding: 0px;
+	color: transparent;
+	text-shadow: 0 0 0px #fff;
+	text-align: center;
+	left: 0; top: 0;
+	position: absolute;
+	line-height: 100vh;
+} ::-moz-placeholder {
+	color: #fff;
+	opacity: 1;
+} ::-webkit-placeholder {
+	color: #fff;
+	opacity: 1;
+}
