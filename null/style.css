@@ -18,6 +18,7 @@ input {
 	left: 0; top: 0;
 	position: absolute;
 	line-height: 100vh;
+	outline: none;
 } ::-moz-placeholder {
 	color: #fff;
 	opacity: 1;
