@@ -15,20 +15,49 @@
 		}
 	});
 	
-	var links = document.getElementsByClassName("link");
+	function linkup(val) {
+		const sites = [
+			'thehiddenbay'
+			,'facebook'
+			,'twitter'
+			,'linkedin'
+			,'youtube'
+			,'github'
+			,'instagram'
+			,'reddit'
+			,'couchsurfing'
+			,'airbnb'
+			,'indeed'
+			,'trademe.nz'
+			,'mega.nz'
+			,'invidio.us'
+		];
+		
+		let website,domain;
+		for (site of sites) {
+			if (site.indexOf(val) > -1) {website=site; break;}
+		}
+		
+		//	if website: goto website
+		//	else if board: goto board
+		//	else search on ddg
+		if (website) {
+			domain = website.indexOf(".") == -1 ? ".com" : "";
+			url = `https://${website+domain}`;
+			window.open(url);
+		} else if (val[0] == "/") {
+			console.log("testing chan");
+			window.open(`https://4chan.org${val}/catalog`);
+		} else {
+			window.open(`https://duckduckgo.com/?q=${val}`);
+		}
+	}
 	
 	function search(e) {
+		console.log("testing anything");
 		if (e.keyCode == 13) {
 			var val = document.getElementById("search").value;
-			for (var link of links) {
-				var href = link.getAttribute("href");
-				if (href.includes(val)) {
-					window.open(href);
-					document.getElementById('search').value = '';
-					return 0;
-				}
-			}
-			window.open("https://duckduckgo.com/?q=" + val);
+			linkup(val);
 			document.getElementById('search').value = '';
 			return 1;
 		}
@@ -38,37 +67,5 @@
 
 <body>
 	<input id="search" onkeypress="return search(event)" type="text" placeholder="">
-	
-	<ul class="card" id="fourch"> <!--4ch-->
-        <li class="bookmark"><a class="link" href="https://4chan.org/p/catalog">/P/</a></li>
-        <li class="bookmark"><a class="link" href="https://4chan.org/g/catalog">/G/</a></li>
-        <li class="bookmark"><a class="link" href="https://4chan.org/tv/catalog">/TV/</a></li>
-        <li class="bookmark"><a class="link" href="https://4chan.org/mu/catalog">/MU/</a></li>
-        <li class="bookmark"><a class="link" href="https://4chan.org/wg/catalog">/WG/</a></li>
-        <li class="bookmark"><a class="link" href="https://4chan.org/adv/catalog">/ADV/</a></li>
-        <li class="bookmark"><a class="link" href="https://4chan.org/trv/catalog">/TRV/</a></li>
-    </ul>
-    <ul class="card" id="social"> <!--social-->
-        <li class="bookmark"><a class="link" href="https://instagram.com">Instagram</a></li>
-        <li class="bookmark"><a class="link" href="https://invidio.us">Youtube</a></li>
-        <li class="bookmark"><a class="link" href="https://pinterest.nz">Pinterest</a></li>
-        <li class="bookmark"><a class="link" href="https://reddit.com">Reddit</a></li>
-    </ul>
-    <ul class="card" id="tools"> <!--tools-->
-        <li class="bookmark"><a class="link" href="https://maps.google.com">G-maps</a></li>
-        <li class="bookmark"><a class="link" href="https://booking.com">Booking-com</a></li>
-        <li class="bookmark"><a class="link" href="https://www.couchsurfing.com/dashboard">Couchsurfing</a></li>
-        <li class="bookmark"><a class="link" href="https://www.airbnb.co.nz">Airbnb</a></li>
-        <li class="bookmark"><a class="link" href="https://www.helpx.net/">Helpx</a></li>
-        <li class="bookmark"><a class="link" href="https://mega.nz/">Mega</a></li>
-        <li class="bookmark"><a class="link" href="https://github.com/">Github</a></li>
-        <li class="bookmark"><a class="link" href="http://exif.regex.info/exif.cgi">EXIF Tool</a></li>
-    </ul>
-	
-	<ul class="card" id="work"> <!--work-->
-		<li class="bookmark"><a class="link" href="https://weworkremotely.com/">WWR</a></li>
-		<li class="bookmark"><a class="link" href="https://indeed.com/">indeed</a></li>
-		<li class="bookmark"><a class="link" href="https://linkedin.com">LinkedIn</a></li>
-	</ul>
 </body>
 </html>
