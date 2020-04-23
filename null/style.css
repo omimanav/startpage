@@ -9,10 +9,10 @@ input {
 	font-family: "Josefin Sans", sans-serif;
 	font-size: 5vw;
 	width: 100vw;
-	font-weight: 700;
+	font-weight: 800;
 	border: none;
 	padding: 0px;
-	color: transparent;
+	color: #fff;
 	text-shadow: 0 0 0px #fff;
 	text-align: center;
 	left: 0; top: 0;
@@ -25,7 +25,7 @@ input {
 } ::-webkit-placeholder {
 	color: #fff;
 	opacity: 1;
-} ::-moz-selection, ::selection {
+} ::selection {
 	background-color: #fff;
 	color: #111;
 }
