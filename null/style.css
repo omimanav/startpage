@@ -25,6 +25,9 @@ input {
 } ::-webkit-placeholder {
 	color: #fff;
 	opacity: 1;
+} ::-moz-selection, ::selection {
+	background-color: #fff;
+	color: #111;
 }
 
 .card {
