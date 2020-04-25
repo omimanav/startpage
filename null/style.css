@@ -28,6 +28,8 @@ input {
 } ::selection {
 	background-color: #fff;
 	color: #111;
+} ::-ms-clear {
+	display: none;
 }
 
 .card {
