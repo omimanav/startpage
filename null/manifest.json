@@ -1,9 +1,5 @@
 {
   "name": "New Tab",
-  "icons": {
-  "16":"home.png",
-  "512":"home.png"
-  },
   "description": "Overrides the new tab page",
   "version": "0.1",
   "incognito": "split",
