@@ -43,7 +43,7 @@ function linkup(val) {
 		console.log("testing chan");
 		window.open(`https://4chan.org${val}catalog`);
 	} else {
-		window.open(`https://bing.com/?q=${val}&PC=U531`);
+		window.open(`https://duckduckgo.com/?q=${val}`);
 	}
 }
 
