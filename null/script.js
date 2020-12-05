@@ -25,6 +25,7 @@ function linkup(val) {
 		,'mega.nz'
 		,'invidio.us'
 		,'libgen.is'
+		,'chegg.com/tutors/opportunities/'
 	];
 	
 	let website,domain;
