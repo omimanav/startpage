@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
 
 body {
-	background-color: #111;
+	background-color: rgb(150, 150, 130);
 }
 /**/
 input {
-	background-color: #111;
+	background-color: rgb(150, 150, 130);
 	font-family: "Josefin Sans", sans-serif;
 	font-size: 5vw;
 	width: 100vw;

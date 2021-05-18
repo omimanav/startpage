@@ -12,11 +12,15 @@ function linkup(val) {
 		'thehiddenbay'
 		,'facebook'
 		,'twitter'
+		,'pinterest'
 		,'linkedin'
 		,'youtube'
 		,'github'
 		,'instagram'
 		,'reddit'
+		,'gmail'
+		,'outlook'
+		,'icloud'
 		,'couchsurfing'
 		,'airbnb'
 		,'indeed'
@@ -25,7 +29,7 @@ function linkup(val) {
 		,'mega.nz'
 		,'invidio.us'
 		,'libgen.is'
-		,'chegg.com/tutors/opportunities/'
+		,'waifu2x.udp.jp'
 	];
 	
 	let website,domain;
@@ -38,7 +42,7 @@ function linkup(val) {
 	//	else search on ddg
 	if (website) {
 		domain = website.indexOf(".") == -1 ? ".com" : "";
-		url = `https://${website+domain}`;
+		url = `http://${website+domain}`;
 		window.open(url);
 	} else if (val[0] == "/") {
 		console.log("testing chan");
