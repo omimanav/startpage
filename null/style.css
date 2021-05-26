@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
 
 body {
-	background-color: rgb(150, 150, 130);
+	background-color: rgb(150, 150, 140);
 }
 /**/
 input {
-	background-color: rgb(150, 150, 130);
+	background-color: rgb(150, 150, 140);
 	font-family: "Josefin Sans", sans-serif;
 	font-size: 5vw;
 	width: 100vw;
@@ -27,7 +27,7 @@ input {
 	opacity: 1;
 } ::selection {
 	background-color: #fff;
-	color: #111;
+	color: rgb(150, 150, 140);
 } ::-ms-clear {
 	display: none;
 }

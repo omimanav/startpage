@@ -30,6 +30,7 @@ function linkup(val) {
 		,'invidio.us'
 		,'libgen.is'
 		,'waifu2x.udp.jp'
+		,'exif.regex.info/exif.cgi'
 	];
 	
 	let website,domain;
