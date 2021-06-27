@@ -31,6 +31,9 @@ function linkup(val) {
 		,'libgen.is'
 		,'waifu2x.udp.jp'
 		,'exif.regex.info/exif.cgi'
+		,'pixelpeeper.io'
+		,'snapdrop.net'
+		,'sharedrop.io'
 	];
 	
 	let website,domain;
@@ -68,3 +71,38 @@ function search(e) {
 
 document.getElementById("search").focus();
 document.getElementById("search").addEventListener("keypress", (e) => search(e));
+
+const data = null;
+const symbols = ["AAPL", "PM", "AIR.NZ", "RAK.NZ", "NWF.NZ", "PEB.NZ"].join(",");
+
+const xhr = new XMLHttpRequest();
+xhr.withCredentials = false;
+
+xhr.addEventListener("readystatechange", function () {
+	if (this.readyState === this.DONE) {
+		const result = JSON.parse(this.responseText).quoteResponse.result;
+		for (var ticker in result) {
+			var market = result[ticker]["fullExchangeName"]
+			,company = result[ticker]["longName"]
+			,symbol = result[ticker]["symbol"]
+			,price = `${result[ticker]["currency"]} ${result[ticker]["regularMarketPrice"]}`
+			,range = `${result[ticker]["currency"]} ${result[ticker]["regularMarketDayRange"]}`;
+			
+			document.getElementById("watchlist").innerHTML += 
+			`<span class="card">
+			<i class="market">${market}</i>
+			<b class="company">${company}</b>
+			<b class="symbol">${symbol}</b>
+			<b class="price">${price}</b>
+			<i class="range">${range}</i>
+			</span>`;
+		} 
+	}
+});
+
+xhr.open("GET", `https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/v2/get-quotes?region=US&symbols=${symbols}`);
+xhr.setRequestHeader("x-rapidapi-key", "5fdb4bc5e4msh8a96cdebe86ec02p10314bjsn20ce4cb4e867");
+xhr.setRequestHeader("x-rapidapi-host", "apidojo-yahoo-finance-v1.p.rapidapi.com");
+
+xhr.send(data);
+

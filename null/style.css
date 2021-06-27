@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
 
 body {
-	background-color: rgb(150, 150, 140);
+	background-color: rgb(36, 36, 36);
 }
 /**/
-input {
-	background-color: rgb(150, 150, 140);
+#search {
+	background-color: rgb(36, 36, 36);
 	font-family: "Josefin Sans", sans-serif;
 	font-size: 5vw;
 	width: 100vw;
@@ -19,6 +19,7 @@ input {
 	position: absolute;
 	line-height: 100vh;
 	outline: none;
+	z-index: 1;
 } ::-moz-placeholder {
 	color: #fff;
 	opacity: 1;
@@ -27,11 +28,61 @@ input {
 	opacity: 1;
 } ::selection {
 	background-color: #fff;
-	color: rgb(150, 150, 140);
+	color: rgb(32, 32, 32);
 } ::-ms-clear {
 	display: none;
 }
 
-.card {
-	display: none;
+@media (min-height: 500px) {
+	#watchlist {
+		background: transparent;
+		font-family: "Josefin Sans", sans-serif;
+		color: #fff;
+		width: 100vw;
+		height: 20vh;
+		justify-content: space-evenly;
+		align-items: center;
+		left: 0; top: 0;
+		position: absolute;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, 200px);
+		z-index: 2;
+	} .card {
+		display: grid;
+		align-items: center;
+		justify-items: center;
+		grid-template-rows: 15% 70% 15%;
+		grid-template-columns: 25% 25% 25% 25%;
+		height: 100px;
+	} .market {
+		grid-row-start: 1;
+		grid-row-end: 2;
+		grid-column-start: 1;
+		grid-column-end: 3;
+		font-size: small;
+	} .company {
+		grid-row-start: 1;
+		grid-row-end: 2;
+		grid-column-start: 3;
+		grid-column-end: 5;
+		font-size: small;
+	} .symbol {
+		grid-row-start: 2;
+		grid-row-end: 3;
+		grid-column-start: 1;
+		grid-column-end: 3;
+		font-size: large;
+	} .price {
+		grid-row-start: 2;
+		grid-row-end: 3;
+		grid-column-start: 3;
+		grid-column-end: 5;
+		font-size: large;
+	} .range {
+		grid-row-start: 3;
+		grid-row-end: 4;
+		grid-column-start: 1;
+		grid-column-end: 5;
+		font-size: small;
+	}
 }
