@@ -57,7 +57,7 @@ function linkup(val) {
 }
 
 function search(e) {
-	console.log("testing anything");
+	console.log(e);
 	if (e.keyCode == 13) {
 		var val = document.getElementById("search").value;
 		if (val.trim().indexOf(".") > -1 && val.indexOf(" ") == -1) {
