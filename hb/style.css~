@@ -30,7 +30,7 @@ body {
 	box-shadow: 5px -5px 10px #E284A4bb, -7px 7px 10px #8869aabb, -3px -3px 5px #ab729c, 5px 5px 5px #946ca4;
 	padding: 10px;
 	text-align: center;
-	color: #eee9;
+	color: #eee6;
 	text-shadow: 5px -5px 10px #E284A4bb, -7px 7px 10px #8869aa33;
 } #search:focus {
 	outline: none;
