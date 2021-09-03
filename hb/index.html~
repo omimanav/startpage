@@ -9,7 +9,7 @@
 
 <body>
 	<input id="search" type="text" placeholder="">
-	<span id="watchlist"></span>
-	<script src="script.js"></script>
+	<span id="feed"></span>
+	<script src="js.js"></script>
 </body>
 </html>

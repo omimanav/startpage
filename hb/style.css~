@@ -11,6 +11,7 @@
 
 body {
 	display: grid;
+	grid-template-rows: 30% 70%;
 	padding: 0;
 	margin: 0;
 	top: 0; left: 0;
@@ -23,20 +24,21 @@ body {
 #search {
 	justify-self: center;
 	align-self: center;
+	width: 60%;
 	font-size: 10vmin;
 	border-radius: 10px;
 	border: none;
-	background-image: linear-gradient(185deg, #e28287, #9c6ea2);
-	box-shadow: 5px -5px 10px #E284A4bb, -7px 7px 10px #8869aabb, -3px -3px 5px #ab729c, 5px 5px 5px #946ca4;
+	background-image: linear-gradient(185deg, #e28287, #b37498);
+	box-shadow: 5px -5px 10px #e68385c7, -5px 5px 5px #a8719cdb, -5px -5px 5px #d17d8ea3, 5px 5px 5px #c07893c2;
 	padding: 10px;
 	text-align: center;
-	color: #eee6;
-	text-shadow: 5px -5px 10px #E284A4bb, -7px 7px 10px #8869aa33;
+	color: #eee9;
+	text-shadow: 5px -5px 7px #E284A4bb, -7px 7px 7px #8869aa33;
 } #search:focus {
 	outline: none;
 }
 
-#watchlist {
+#feed {
 	display: none;
 }
 

@@ -89,7 +89,7 @@ xhr.addEventListener("readystatechange", function () {
 			,price = `${result[ticker]["currency"]} ${result[ticker]["regularMarketPrice"]}`
 			,range = `${result[ticker]["currency"]} ${result[ticker]["regularMarketDayRange"]}`;
 			
-			document.getElementById("watchlist").innerHTML += 
+			document.getElementById("feed").innerHTML += 
 			`<span class="card">
 			<i class="market">${market}</i>
 			<b class="company">${company}</b>
