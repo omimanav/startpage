@@ -1,45 +1,70 @@
 @font-face {
-	src: url("RobotoSlab.ttf");
-	font-family: "Roboto";
+	src: url("MMD-Regular.ttf");
+	font-family: "mmd";
+}
+
+@font-face {
+	src: url("SourceCodePro-Bold.ttf");
+	font-family: "scp";
 }
 
 * {
-	font-family: "Roboto";
+	font-family: "scp", monospace;
 	animation-duration: 1.5s;
-	-webkit-animation-duration: 1.5s;
 }
 
 body {
 	display: grid;
 	grid-template-rows: 30% 70%;
-	padding: 0;
+	row-gap: 50px;
+	padding: 50px;
 	margin: 0;
-	top: 0; left: 0;
-	height: 100vh;
-	background-color: #cacaff;
-	background-image: linear-gradient(190deg, #EA8484, #5C5CBA);
+	background-color: #123456;
 	background-repeat: no-repeat;
 }
 
 #search {
+	grid-row: 1;
 	justify-self: center;
 	align-self: center;
-	width: 60%;
+	width: 75%;
 	font-size: 10vmin;
 	border-radius: 10px;
 	border: none;
-	background-image: linear-gradient(185deg, #e28287, #b37498);
-	box-shadow: 5px -5px 10px #e68385c7, -5px 5px 5px #a8719cdb, -5px -5px 5px #d17d8ea3, 5px 5px 5px #c07893c2;
+	background-image: linear-gradient(185deg, #CA8642, #765432);
+	box-shadow: 5px -5px 10px #345678, -5px 5px 10px #111A;
 	padding: 10px;
 	text-align: center;
-	color: #eee9;
-	text-shadow: 5px -5px 7px #E284A4bb, -7px 7px 7px #8869aa33;
+	color: transparent;
+	text-shadow: 0px 0px 1px #A86420AA, 2px -2px 5px #ECA864, -3px 3px 5px #012345;
 } #search:focus {
 	outline: none;
+} #search::selection {
+	background: transparent;
 }
 
-#feed {
-	display: none;
+#tickers {
+	display: grid;
+	row-gap: 10px;
+	column-gap: 10px;
+	grid-row: 2;
+	font-weight: 900;
+	grid-template-columns: repeat(auto-fit, 200px);
+	justify-content: center;
 }
 
-
+.card {
+	display: grid;
+	justify-items: center;
+	border-radius: 5px;
+	border: 1px solid #ECA864;
+	color: #CA8642;
+	font-size: 1em;
+	text-shadow:2px -2px 5px #2468AC, -2px 2px 2px #1114;
+	padding: 10px;
+	background: #234567;
+} .symbol {
+	font-size: 1em;
+} .range {
+	font-size: 0.8rem;
+}
