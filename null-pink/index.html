@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>&nbsp;</title>
 	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<input id="search" onkeypress="return search(event)" type="text" placeholder="">
+	<span id="linkContainer">
+		<a href="#" class="link">link name</a>
+		<a href="#" class="link">link name</a>
+		<a href="#" class="link">link name</a>
+	</span>
+	<span id="greetings"></span>
+	<img id="image" src="https://www.animalspot.net/wp-content/uploads/2013/02/Rabbit-Images.jpg">
+	
+	<!-- IGNORE BELOW -->	
 	<script>
 		document.addEventListener("keydown", event => {
 			if (![8, 9, 20, 32, 37, 38, 39, 40].includes(event.keyCode)) {
@@ -75,10 +88,18 @@
 
 		document.getElementById("search").focus();
 		document.getElementById("search").addEventListener("keypress", (e) => search(e));
+		
+		var time = new Date()
+		,hours = time.getHours()
+		,minutes = time.getMinutes();
+		
+		if (hours > 4 && hours < 12) {
+			document.getElementById("greetings").innerHTML = `🐮 Good Morning, Iris! It is currently ${hours}:${minutes > 10 ? minutes : "0" + minutes}`;	
+		}	else if (hours > 12 && hours < 6) {
+			document.getElementById("greetings").innerHTML = `🦄 Good Afternoon, Iris! It is currently ${hours}:${minutes > 10 ? minutes : "0" + minutes}`;	
+		} else {
+			document.getElementById("greetings").innerHTML = `🦝 Good Evening, Iris! It is currently ${hours}:${minutes > 10 ? minutes : "0" + minutes}`;	
+		}
 	</script>
-</head>
-
-<body>
-	<input id="search" onkeypress="return search(event)" type="text" placeholder="">
 </body>
 </html>

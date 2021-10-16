@@ -74,7 +74,8 @@ document.getElementById("search").focus();
 document.getElementById("search").addEventListener("keypress", (e) => search(e));
 
 const data = null;
-var symbols = "AAPL,AMC,BABA,BNTX,BP,DIDI,GME,HOOD, MDVL,MRNA,MSFT,NVAX,PFE,ZIM,AIR.NZ,FBU.NZ,FRE.NZ,FPH.NZ,NWF.NZ,PEB.NZ,RBD.NZ,WBC.NZ,ZEL.NZ";
+
+var symbols = "AAPL,AMC,BABA,BNTX,BP,DIDI,GME,HOOD, MDVL,MRNA,MSFT,NVAX,PFE,RKLB,ZIM,AIR.NZ,FBU.NZ,FRE.NZ,FPH.NZ,NWF.NZ,PEB.NZ,RBD.NZ,WBC.NZ,ZEL.NZ";
 
 const xhr = new XMLHttpRequest();
 xhr.withCredentials = false;
@@ -100,7 +101,7 @@ xhr.addEventListener("readystatechange", function () {
 });
 
 xhr.open("GET", `https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/v2/get-quotes?region=US&symbols=${symbols}`);
-xhr.setRequestHeader("x-rapidapi-key", "dog");
+xhr.setRequestHeader("x-rapidapi-key", "facb608fc8mshf405870d0d2eb4fp14ddafjsn5c8408c45de7");
 xhr.setRequestHeader("x-rapidapi-host", "apidojo-yahoo-finance-v1.p.rapidapi.com");
 
 xhr.send(data);

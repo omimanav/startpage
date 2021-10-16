@@ -9,7 +9,7 @@
 }
 
 * {
-	font-family: "scp", monospace;
+	font-family: "Anonymous Pro", "scp", monospace;
 	animation-duration: 1.5s;
 }
 
@@ -19,8 +19,12 @@ body {
 	row-gap: 50px;
 	padding: 50px;
 	margin: 0;
-	background-color: #123456;
-	background-repeat: no-repeat;
+	color: #CA8642;			
+	background-color: #012345;
+	background: 
+url("https://i.ibb.co/NCtGSfD/zorrotop.png") fixed center 
+bottom, url("https://i.ibb.co/ctgL7SY/1630988217591.gif") fixed center bottom;
+	background-size: cover, cover;
 }
 
 #search {
@@ -32,7 +36,7 @@ body {
 	border-radius: 10px;
 	border: 1px solid #ECA864;
 	padding: 10px;
-	background: #234567;
+	background: #23456789;
 	text-align: center;
 	color: transparent;
 	text-shadow: 0px 0px 1px #CA8642, 2px -2px 5px #2468AC, -3px 3px 5px #012345;
@@ -61,7 +65,7 @@ body {
 	font-size: 1em;
 	text-shadow:2px -2px 5px #2468AC, -2px 2px 2px #1114;
 	padding: 10px;
-	background: #234567;
+	background: #23456789;
 } .symbol {
 	font-size: 1em;
 } .range {
