@@ -21,9 +21,9 @@ body {
 	margin: 0;
 	color: #fff;			
 	background-color: #000;
-	background: 
-url("https://a.pomf.cat/ufxwcs.png") fixed center 
-bottom, url("https://a.pomf.cat/cafhwq.gif") fixed center bottom;
+	background-image: url("https://a.pomf.cat/ufxwcs.png"), url("https://a.pomf.cat/cafhwq.gif");
+	background-attachment: fixed, fixed;
+	background-position: center bottom, center bottom;
 	background-size: cover, cover;
 }
 
