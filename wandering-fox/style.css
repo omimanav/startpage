@@ -21,9 +21,9 @@ body {
 	margin: 0;
 	color: #CA8642;			
 	background-color: #012345;
-	background: 
-url("https://i.ibb.co/NCtGSfD/zorrotop.png") fixed center 
-bottom, url("https://i.ibb.co/ctgL7SY/1630988217591.gif") fixed center bottom;
+	background-image: url("https://i.ibb.co/NCtGSfD/zorrotop.png"), url("https://i.ibb.co/ctgL7SY/1630988217591.gif");
+	background-attachment: fixed, fixed;
+	background-position: center bottom, center bottom;
 	background-size: cover, cover;
 }
 
