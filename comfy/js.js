@@ -74,7 +74,6 @@ document.getElementById("search").focus();
 document.getElementById("search").addEventListener("keypress", (e) => search(e));
 
 const data = null;
-
 var symbols = "AAPL,AMC,BABA,BNTX,BP,DIDI,GME,HOOD, MDVL,MRNA,MSFT,NVAX,PFE,RKLB,ZIM,AIR.NZ,FBU.NZ,FRE.NZ,FPH.NZ,NWF.NZ,PEB.NZ,RBD.NZ,WBC.NZ,ZEL.NZ";
 
 const xhr = new XMLHttpRequest();
@@ -109,6 +108,6 @@ xhr.send(data);
 
 var datetime = new Date()
 ,day = {0:"Sunday", 1:"Monday", 2:"Tuesday", 3:"Wednesday", 4:"Thursday", 5:"Friday", 6:"Saturday"};
-var time = `${datetime.getHours()}:${datetime.getMinutes()}`
+var time = `${datetime.getHours()}:${datetime.getMinutes() > 9 ? datetime.getMinutes() : "0"+datetime.getMinutes()}`
 ,date = `${day[datetime.getDay()]} ${datetime.getDate()}/${datetime.getMonth()+1}`
 document.getElementById("greetings").innerHTML = `It's currently ${time}, ${date}. Hope you're doing well.`;
