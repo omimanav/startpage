@@ -89,13 +89,13 @@ xhr.addEventListener("readystatechange", function () {
 			,range = `${result[ticker]["regularMarketDayRange"]}`;
 			
 			document.getElementById("tickers").innerHTML += 
-			`<span class="card">
+			`<a href="https://finance.yahoo.com/quote/${symbol}" class="card">
 			<b class="symbol">${symbol}</b>
 			<br>
 			<b class="price">${price}</b>
 			<br>
 			<i class="range">${range}</i>
-			</span>`;
+			</a>`;
 		} 
 	}
 });

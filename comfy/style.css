@@ -50,4 +50,8 @@ body {
 	text-shadow: 0px 5px 10px #000;
 } .card {
 	text-align: center;
+	color: #fff;
+	text-decoration: none;
+} .card:hover {
+	text-shadow: 0px 5px 5px #000; 
 }
