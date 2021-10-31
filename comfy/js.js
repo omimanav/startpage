@@ -35,6 +35,7 @@ function linkup(val) {
 		,'pixelpeeper.io'
 		,'snapdrop.net'
 		,'sharedrop.io'
+		,'deepbrid.com/service'
 	];
 	
 	let website,domain;
