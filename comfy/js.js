@@ -36,6 +36,7 @@ function linkup(val) {
 		,'snapdrop.net'
 		,'sharedrop.io'
 		,'deepbrid.com/service'
+		,'neodebrid.com'
 	];
 	
 	let website,domain;
