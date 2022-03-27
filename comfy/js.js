@@ -28,7 +28,7 @@ function linkup(val) {
 		,'pdfdrive'
 		,'trademe.nz'
 		,'mega.nz'
-		,'invidio.us'
+		,'yewtu.be'
 		,'libgen.is'
 		,'waifu2x.udp.jp'
 		,'exif.regex.info/exif.cgi'
@@ -76,7 +76,7 @@ document.getElementById("search").focus();
 document.getElementById("search").addEventListener("keypress", (e) => search(e));
 
 const data = null;
-var symbols = "AAPL,AMC,BABA,BNTX,BP,DIDI,GME,HOOD, MDVL,MRNA,MSFT,NVAX,PFE,RKLB,ZIM,AIR.NZ,FBU.NZ,FRE.NZ,FPH.NZ,NWF.NZ,PEB.NZ,RBD.NZ,WBC.NZ,ZEL.NZ";
+var symbols = "AAPL,AMC,BABA,BNTX,BP,DIDI,GME,HOOD, MDVL,MRNA,MSFT,NVAX,PFE,RKLB,ZIM,AIR.NZ,FBU.NZ,FRE.NZ,FPH.NZ,MFT.NZ,NWF.NZ,PEB.NZ,RBD.NZ,WBC.NZ,ZEL.NZ";
 
 const xhr = new XMLHttpRequest();
 xhr.withCredentials = false;
