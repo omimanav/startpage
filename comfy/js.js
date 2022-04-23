@@ -38,12 +38,12 @@ function linkup(val) {
 		,'deepbrid.com/service'
 		,'neodebrid.com'
 	];
-	
+
 	let website,domain;
 	for (site of sites) {
 		if (site.indexOf(val) > -1) {website=site; break;}
 	}
-	
+
 	//	if website: goto website
 	//	else if board: goto board
 	//	else search on ddg
@@ -76,7 +76,7 @@ document.getElementById("search").focus();
 document.getElementById("search").addEventListener("keypress", (e) => search(e));
 
 const data = null;
-var symbols = "AAPL,AMC,BABA,BNTX,BP,DIDI,GME,HOOD, MDVL,MRNA,MSFT,NVAX,PFE,RKLB,ZIM,AIR.NZ,FBU.NZ,FRE.NZ,FPH.NZ,MFT.NZ,NWF.NZ,PEB.NZ,RBD.NZ,WBC.NZ,ZEL.NZ";
+var symbols = "AAPL,AMC,AMD,BABA,BNTX,BP,DIDI,GME,HOOD,MDVL,MRNA,MSFT,NVAX,PFE,PLTR,RKLB,ZIM,AIR.NZ,FBU.NZ,FRE.NZ,FPH.NZ,MFT.NZ,NWF.NZ,PEB.NZ,PPH.NZ,RAK.NZ,RBD.NZ,STU.NZ,WBC.NZ,WHS.NZ,ZEL.NZ";
 
 const xhr = new XMLHttpRequest();
 xhr.withCredentials = false;
@@ -88,8 +88,8 @@ xhr.addEventListener("readystatechange", function () {
 			var symbol = result[ticker]["symbol"]
 			,price = `${result[ticker]["currency"]} ${result[ticker]["regularMarketPrice"]}`
 			,range = `${result[ticker]["regularMarketDayRange"]}`;
-			
-			document.getElementById("tickers").innerHTML += 
+
+			document.getElementById("tickers").innerHTML +=
 			`<a href="https://finance.yahoo.com/quote/${symbol}" class="card">
 			<b class="symbol">${symbol}</b>
 			<br>
@@ -97,7 +97,7 @@ xhr.addEventListener("readystatechange", function () {
 			<br>
 			<i class="range">${range}</i>
 			</a>`;
-		} 
+		}
 	}
 });
 
