@@ -44,16 +44,16 @@ function linkup(val) {
 		if (site.indexOf(val) > -1) {website=site; break;}
 	}
 
-	//	if website: goto website
-	//	else if board: goto board
+	//	if board: goto board
+	//	else if website: goto website
 	//	else search on ddg
-	if (website) {
+	if (val[0] == "/") {
+		console.log("testing chan");
+		window.open(`https://4chan.org${val}catalog`, "_self");
+	} else if (website) {
 		domain = website.indexOf(".") == -1 ? ".com" : "";
 		url = `http://${website+domain}`;
 		window.open(url, "_self");
-	} else if (val[0] == "/") {
-		console.log("testing chan");
-		window.open(`https://4chan.org${val}catalog`, "_self");
 	} else {
 		window.open(`https://duckduckgo.com/?q=${val}`, "_self");
 	}

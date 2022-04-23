@@ -28,30 +28,32 @@ function linkup(val) {
 		,'pdfdrive'
 		,'trademe.nz'
 		,'mega.nz'
-		,'invidio.us'
+		,'yewtu.be'
 		,'libgen.is'
 		,'waifu2x.udp.jp'
 		,'exif.regex.info/exif.cgi'
 		,'pixelpeeper.io'
 		,'snapdrop.net'
 		,'sharedrop.io'
+		,'deepbrid.com/service'
+		,'neodebrid.com'
 	];
-	
+
 	let website,domain;
 	for (site of sites) {
 		if (site.indexOf(val) > -1) {website=site; break;}
 	}
-	
-	//	if website: goto website
-	//	else if board: goto board
+
+	//	if board: goto board
+	//	else if website: goto website
 	//	else search on ddg
-	if (website) {
+	if (val[0] == "/") {
+		console.log("testing chan");
+		window.open(`https://4chan.org${val}catalog`, "_self");
+	} else if (website) {
 		domain = website.indexOf(".") == -1 ? ".com" : "";
 		url = `http://${website+domain}`;
 		window.open(url, "_self");
-	} else if (val[0] == "/") {
-		console.log("testing chan");
-		window.open(`https://4chan.org${val}catalog`, "_self");
 	} else {
 		window.open(`https://duckduckgo.com/?q=${val}`, "_self");
 	}
@@ -74,8 +76,7 @@ document.getElementById("search").focus();
 document.getElementById("search").addEventListener("keypress", (e) => search(e));
 
 const data = null;
-
-var symbols = "AAPL,AMC,BABA,BNTX,BP,DIDI,GME,HOOD, MDVL,MRNA,MSFT,NVAX,PFE,RKLB,ZIM,AIR.NZ,FBU.NZ,FRE.NZ,FPH.NZ,NWF.NZ,PEB.NZ,RBD.NZ,WBC.NZ,ZEL.NZ";
+var symbols = "AAPL,AMC,AMD,BABA,BNTX,BP,DIDI,GME,HOOD,MDVL,MRNA,MSFT,NVAX,PFE,PLTR,RKLB,ZIM,AIR.NZ,FBU.NZ,FRE.NZ,FPH.NZ,MFT.NZ,NWF.NZ,PEB.NZ,PPH.NZ,RAK.NZ,RBD.NZ,STU.NZ,WBC.NZ,WHS.NZ,ZEL.NZ";
 
 const xhr = new XMLHttpRequest();
 xhr.withCredentials = false;
@@ -87,16 +88,16 @@ xhr.addEventListener("readystatechange", function () {
 			var symbol = result[ticker]["symbol"]
 			,price = `${result[ticker]["currency"]} ${result[ticker]["regularMarketPrice"]}`
 			,range = `${result[ticker]["regularMarketDayRange"]}`;
-			
-			document.getElementById("tickers").innerHTML += 
-			`<span class="card">
+
+			document.getElementById("tickers").innerHTML +=
+			`<a href="https://finance.yahoo.com/quote/${symbol}" class="card">
 			<b class="symbol">${symbol}</b>
 			<br>
 			<b class="price">${price}</b>
 			<br>
 			<i class="range">${range}</i>
-			</span>`;
-		} 
+			</a>`;
+		}
 	}
 });
 
@@ -105,3 +106,10 @@ xhr.setRequestHeader("x-rapidapi-key", "facb608fc8mshf405870d0d2eb4fp14ddafjsn5c
 xhr.setRequestHeader("x-rapidapi-host", "apidojo-yahoo-finance-v1.p.rapidapi.com");
 
 xhr.send(data);
+
+
+var datetime = new Date()
+,day = {0:"Sunday", 1:"Monday", 2:"Tuesday", 3:"Wednesday", 4:"Thursday", 5:"Friday", 6:"Saturday"};
+var time = `${datetime.getHours()}:${datetime.getMinutes() > 9 ? datetime.getMinutes() : "0"+datetime.getMinutes()}`
+,date = `${day[datetime.getDay()]} ${datetime.getDate()}/${datetime.getMonth()+1}`
+document.getElementById("greetings").innerHTML = `It's currently ${time}, ${date}. Hope you're doing well.`;
