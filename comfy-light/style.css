@@ -1,0 +1,58 @@
+* {
+	font-family: "Anonymous Pro", monospace;
+}
+
+body {
+	background-color: #000;
+	background-image: url("bg.jpg");
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	
+	display: grid;
+	row-gap: 10%;
+}
+
+#search {
+	grid-row: 1 / span 1;
+	grid-column: 1 / span 1;
+	height: 60pt;
+	width: 50%;
+	font-size: 30pt;
+	justify-self: center;
+	text-align: center;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #fff;
+	text-shadow: 0px 5px 10px #000;
+}
+
+#greetings {
+	grid-row: 2 / span 1;
+	color: #fff;
+	text-shadow: 0px 5px 10px #000;
+	font-size: 18pt;
+	align-self: center;
+	justify-self: center;
+}
+
+#tickers {
+	grid-row: 3 / span 1;
+	grid-column: 1 / span 1;
+	font-size: 10pt;
+	width: 75%;
+	align-self: center;
+	justify-self: center;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+	row-gap: 10pt;
+	color: #fff;
+	text-shadow: 0px 5px 10px #000;
+} .card {
+	text-align: center;
+	color: #fff;
+	text-decoration: none;
+} .card:hover {
+	text-shadow: 0px 5px 5px #000; 
+}
