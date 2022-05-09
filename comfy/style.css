@@ -3,11 +3,11 @@
 }
 
 body {
-	background-color: #000;
-	background-image: url("bg.png");
-	background-attachment: fixed;
-	background-position: center;
-	background-size: cover;
+	background-color: #012345;
+	background-image: url("zorrotop.png"), url("1630988217591.gif");
+	background-attachment: fixed, fixed;
+	background-position: center bottom, center bottom;
+	background-size: cover, cover;
 	
 	display: grid;
 	row-gap: 10%;
