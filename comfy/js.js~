@@ -85,8 +85,41 @@ function search(e) {
 document.getElementById("search").focus();
 document.getElementById("search").addEventListener("keypress", (e) => search(e));
 
+const data = null;
+var symbols = "AAPL,AMC,AMD,BABA,BNTX,BP,DIDI,GME,HOOD,MDVL,MRNA,MSFT,NVAX,PFE,PLTR,RKLB,ZIM,AIR.NZ,FBU.NZ,FRE.NZ,FPH.NZ,MFT.NZ,NWF.NZ,PEB.NZ,PPH.NZ,RAK.NZ,RBD.NZ,STU.NZ,WBC.NZ,WHS.NZ,ZEL.NZ";
+
+const xhr = new XMLHttpRequest();
+xhr.withCredentials = false;
+
+xhr.addEventListener("readystatechange", function () {
+	if (this.readyState === this.DONE) {
+		const result = JSON.parse(this.responseText).quoteResponse.result;
+		for (var ticker in result) {
+			var symbol = result[ticker]["symbol"]
+			,price = `${result[ticker]["currency"]} ${result[ticker]["regularMarketPrice"]}`
+			,range = `${result[ticker]["regularMarketDayRange"]}`;
+
+			document.getElementById("tickers").innerHTML +=
+			`<a href="https://finance.yahoo.com/quote/${symbol}" class="card">
+			<b class="symbol">${symbol}</b>
+			<br>
+			<b class="price">${price}</b>
+			<br>
+			<i class="range">${range}</i>
+			</a>`;
+		}
+	}
+});
+
+xhr.open("GET", `https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/v2/get-quotes?region=US&symbols=${symbols}`);
+xhr.setRequestHeader("x-rapidapi-key", "facb608fc8mshf405870d0d2eb4fp14ddafjsn5c8408c45de7");
+xhr.setRequestHeader("x-rapidapi-host", "apidojo-yahoo-finance-v1.p.rapidapi.com");
+
+xhr.send(data);
+
+
 var datetime = new Date()
 ,day = {0:"Sunday", 1:"Monday", 2:"Tuesday", 3:"Wednesday", 4:"Thursday", 5:"Friday", 6:"Saturday"};
 var time = `${datetime.getHours()}:${datetime.getMinutes() > 9 ? datetime.getMinutes() : "0"+datetime.getMinutes()}`
 ,date = `${day[datetime.getDay()]} ${datetime.getDate()}/${datetime.getMonth()+1}`
-document.getElementById("greetings").innerHTML = `It's currently ${time}, ${date}. Hope you're doing well.`;
+document.getElementById("greetings").innerHTML = `It"s currently ${time}, ${date}. Hope you"re doing well.`;
