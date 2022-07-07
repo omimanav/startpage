@@ -11,6 +11,7 @@ const sites = [
 		,"reddit"
 		,"gmail"
 		,"outlook"
+		,"photopea"
 		,"icloud"
 		,"couchsurfing"
 		,"airbnb"
