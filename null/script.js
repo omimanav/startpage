@@ -25,6 +25,7 @@ function linkup(val) {
 		,'couchsurfing'
 		,'airbnb'
 		,'indeed'
+		,"neodebrid"
 		,'pdfdrive'
 		,'trademe.nz'
 		,'mega.nz'
@@ -36,7 +37,7 @@ function linkup(val) {
 		,'snapdrop.net'
 		,'sharedrop.io'
 		,'deepbrid.com/service'
-		,'neodebrid.com'
+		,'canvas.auckland.ac.nz'
 	];
 
 	let website,domain;
