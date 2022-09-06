@@ -1,0 +1,73 @@
+<html>
+<head>
+	<title>Home</title>
+	<style>
+		@keyframes cycle {
+			0% {
+				left: 0px;
+				transform: rotateY(0deg);
+			}
+			25% {
+				transform: rotateY(0deg);
+			}
+			50% {
+				left: 70vw;
+				transform: rotateY(180deg);
+			}
+			75% {
+				transform: rotateY(180deg);
+			}
+			100% {
+				transform: rotateY(0deg);
+				left: -10px;
+			}
+		}
+	
+		* {
+			font-family: "Georgia", serif;
+		}
+		
+		body {
+			background: #222;
+			display: grid;
+		}
+		
+		#container {
+			border: 2px solid darkorange;
+			border-radius: 5px;
+			background-image: url("./bg.gif");
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			min-width: 500px;
+			min-height: 400px;
+			width: 80vw;
+			height: 64vw;
+			align-self: center;
+			justify-self: center;
+		} #bg-filter {
+			min-width: 500px;
+			min-height: 400px;
+			width: 80vw;
+			height: 64vw;
+			background: #1118;
+			color: #eee;
+		} #fg {
+			width: 10vw;
+			position: relative;
+			animation: cycle 5s infinite;
+			top: 80%;
+		} 
+	</style>
+</head>
+
+<body>
+	<div id="container">
+		<div id="bg-filter">
+			<img id="fg" src="./fg.gif">
+		</div>
+	</div>
+	
+	
+</body>
+</html>

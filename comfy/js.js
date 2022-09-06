@@ -18,6 +18,7 @@ const sites = [
 		,"indeed"
 		,"pdfdrive"
 		,"askubuntu"
+		,"neodebrid"
 		,"trademe.nz"
 		,"mega.nz"
 		,"yewtu.be"
@@ -28,7 +29,7 @@ const sites = [
 		,"snapdrop.net"
 		,"sharedrop.io"
 		,"deepbrid.com/service"
-		,"neodebrid.com"
+		,"canvas.auckland.ac.nz"
 ];
 
 document.addEventListener("keydown", event => {
