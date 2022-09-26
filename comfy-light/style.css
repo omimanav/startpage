@@ -3,19 +3,26 @@
 }
 
 body {
-	background-color: #000;
+	background-color: #012345;
 	background-image: url("bg.jpg");
 	background-attachment: fixed;
 	background-position: center;
 	background-size: cover;
 	
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
 	display: grid;
+	height: 100vh;
+	align-content: center;
+	justify-content: center;
 	row-gap: 10%;
 }
 
 #search {
 	grid-row: 1 / span 1;
-	grid-column: 1 / span 1;
+	grid-column: 1 / span 3;
 	height: 60pt;
 	width: 50%;
 	font-size: 30pt;
@@ -30,7 +37,7 @@ body {
 
 #suggestions {
 	grid-row: 2 / span 1;
-	grid-column: 1 / span 1;
+	grid-column: 1 / span 3;
 	font-size: 14pt;
 	width: 90%;
 	height: 18pt;
@@ -50,9 +57,38 @@ body {
 
 #greetings {
 	grid-row: 3 / span 1;
+	grid-column: 1 / span 3;
 	color: #fff;
 	text-shadow: 0px 5px 10px #000;
 	font-size: 18pt;
 	align-self: center;
 	justify-self: center;
+}
+
+@keyframes cycle {
+	0% {
+		left: 0px;
+		transform: rotateY(0deg);
+	}
+	25% {
+		transform: rotateY(0deg);
+	}
+	50% {
+		left: 90vw;
+		transform: rotateY(180deg);
+	}
+	75% {
+		transform: rotateY(180deg);
+	}
+	100% {
+		transform: rotateY(0deg);
+		left: 0px;
+	}
+}
+
+#fg {
+	width: 10vw;
+	position: absolute	;
+	animation: cycle 5s infinite;
+	bottom: 0px;
 }
