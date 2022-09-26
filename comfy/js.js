@@ -9,6 +9,7 @@ const sites = [
 		,"github"
 		,"instagram"
 		,"reddit"
+		,"dezgo"
 		,"gmail"
 		,"outlook"
 		,"photopea"

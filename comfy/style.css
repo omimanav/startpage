@@ -4,12 +4,19 @@
 
 body {
 	background-color: #012345;
-	background-image: url("zorrotop.png"), url("1630988217591.gif");
-	background-attachment: fixed, fixed;
-	background-position: center bottom, center bottom;
-	background-size: cover, cover;
+	background-image: url("bg.jpg");
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
 	
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
 	display: grid;
+	height: 100vh;
+	align-content: center;
+	justify-content: center;
 	row-gap: 10%;
 }
 
@@ -56,4 +63,32 @@ body {
 	font-size: 18pt;
 	align-self: center;
 	justify-self: center;
+}
+
+@keyframes cycle {
+	0% {
+		left: 0px;
+		transform: rotateY(0deg);
+	}
+	25% {
+		transform: rotateY(0deg);
+	}
+	50% {
+		left: 90vw;
+		transform: rotateY(180deg);
+	}
+	75% {
+		transform: rotateY(180deg);
+	}
+	100% {
+		transform: rotateY(0deg);
+		left: 0px;
+	}
+}
+
+#fg {
+	width: 10vw;
+	position: absolute	;
+	animation: cycle 5s infinite;
+	bottom: 0px;
 }
