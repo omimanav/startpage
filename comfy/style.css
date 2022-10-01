@@ -68,21 +68,28 @@ body {
 @keyframes cycle {
 	0% {
 		left: 0px;
-		transform: rotateY(0deg);
-	}
+		bottom: 0vh;
+		transform: rotateZ(0deg);
+	} 20% { transform: rotateZ(-15deg); }
 	25% {
-		transform: rotateY(0deg);
-	}
+		left: 90vw;
+		bottom: 0vh;
+		transform: rotateZ(-90deg);
+	} 45% { transform: rotateZ(-105deg); }
 	50% {
 		left: 90vw;
-		transform: rotateY(180deg);
-	}
+		bottom: calc(99vh - 10vw);
+		transform: rotateZ(-180deg);
+	} 70% { transform: rotateZ(-195deg); }
 	75% {
-		transform: rotateY(180deg);
-	}
+		left: 0vw;
+		bottom: calc(99vh - 10vw);
+		transform: rotateZ(-270deg);
+	} 95% { transform: rotateZ(-285deg); }
 	100% {
-		transform: rotateY(0deg);
-		left: 0px;
+		left: 0vw;
+		bottom: 0vh;
+		transform: rotateZ(-360deg);
 	}
 }
 
@@ -90,5 +97,4 @@ body {
 	width: 10vw;
 	position: absolute	;
 	animation: cycle 5s infinite;
-	bottom: 0px;
 }
