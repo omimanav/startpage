@@ -3,7 +3,7 @@
 }
 
 body {
-	background-color: #012345;
+	background-color: #efefef;
 	background-image: url("bg.jpg");
 	background-attachment: fixed;
 	background-position: center;
@@ -13,6 +13,7 @@ body {
 	left: 0;
 	margin: 0;
 	padding: 0;
+	overflow: hidden;
 	display: grid;
 	height: 100vh;
 	align-content: center;
@@ -68,27 +69,37 @@ body {
 @keyframes cycle {
 	0% {
 		left: 0px;
-		transform: rotateY(0deg);
-	}
-	25% {
-		transform: rotateY(0deg);
-	}
-	50% {
+		bottom: 0vh;
+		transform: rotateZ(0deg);
+		animation-timing-function: linear;
+	} 15% { transform: rotateZ(-10deg); }
+	18% {
 		left: 90vw;
-		transform: rotateY(180deg);
-	}
-	75% {
-		transform: rotateY(180deg);
-	}
+		bottom: 0vh;
+		transform: rotateZ(-90deg);
+		animation-timing-function: ease-out;
+	} 62% { transform: rotateZ(-100deg); }
+	65% {
+		left: 90vw;
+		bottom: calc(99vh - 10vw);
+		transform: rotateZ(-180deg);
+		animation-timing-function: linear;
+	} 88% { transform: rotateZ(-190deg); }
+	90% {
+		left: 0vw;
+		bottom: calc(99vh - 10vw);
+		transform: rotateZ(-270deg);
+		animation-timing-function: ease-in;
+	} 98% { transform: rotateZ(-280deg); }
 	100% {
-		transform: rotateY(0deg);
-		left: 0px;
+		left: 0vw;
+		bottom: 0vh;
+		transform: rotateZ(-360deg);
 	}
 }
 
 #fg {
 	width: 10vw;
-	position: absolute	;
-	animation: cycle 5s infinite;
-	bottom: 0px;
+	position: absolute;
+	animation: cycle 7s infinite;
 }
