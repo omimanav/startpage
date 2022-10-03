@@ -14,6 +14,7 @@ body {
 	margin: 0;
 	padding: 0;
 	display: grid;
+	overflow: hidden;
 	height: 100vh;
 	align-content: center;
 	justify-content: center;
@@ -65,36 +66,22 @@ body {
 	justify-self: center;
 }
 
-@keyframes cycle {
+@keyframes walkin {
 	0% {
-		left: 0px;
+		left: -20vw;
 		bottom: 0vh;
-		transform: rotateZ(0deg);
-	} 20% { transform: rotateZ(-15deg); }
-	25% {
-		left: 90vw;
-		bottom: 0vh;
-		transform: rotateZ(-90deg);
-	} 45% { transform: rotateZ(-105deg); }
-	50% {
-		left: 90vw;
-		bottom: calc(99vh - 10vw);
-		transform: rotateZ(-180deg);
-	} 70% { transform: rotateZ(-195deg); }
-	75% {
-		left: 0vw;
-		bottom: calc(99vh - 10vw);
-		transform: rotateZ(-270deg);
-	} 95% { transform: rotateZ(-285deg); }
+	}
 	100% {
-		left: 0vw;
+		left: 110vw;
 		bottom: 0vh;
-		transform: rotateZ(-360deg);
 	}
 }
 
 #fg {
-	width: 10vw;
-	position: absolute	;
-	animation: cycle 5s infinite;
+	transform: rotateY(180deg);
+	width: 20vw;
+	max-width: 500px;
+	min-width: 150px;
+	position: absolute;
+	animation: walkin 15s infinite linear;
 }
